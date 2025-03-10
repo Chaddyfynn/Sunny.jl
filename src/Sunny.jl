@@ -141,6 +141,9 @@ export set_external_field!, set_external_field_at!, dynamic_correlations,
     set_spiral_order_on_sublattice!, set_spiral_order!
 
 
+include("QFI/QFI.jl")
+export nqfi, max_nqfi, plot_nqfi, examine_effect
+
 ### Initialize package extensions
 
 function is_pkg_loaded(pkg::Symbol)
@@ -150,7 +153,7 @@ end
 extension_fns = [
     # ext/PlottingExt
     :Makie => [:plot_spins!, :plot_spins, :plot_intensities!, :plot_intensities,
-               :view_crystal, :view_bz],
+               :view_crystal, :view_bz, :plot_nqfi],
     # ext/ExportVTKExt
     :WriteVTK => [:export_vtk],
 ]
